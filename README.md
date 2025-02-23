@@ -77,7 +77,6 @@
 📌 **[NeuroLens](https://github.com/pc9350/NeuroLens_Brain_Tumor_Classification)** – AI model for **brain tumor classification** with **~99.5% accuracy**.  
 📌 **[Customer Churn Prediction](https://github.com/pc9350/Customer-Churn-Prediction)** – **ML-powered churn analysis**, increasing prediction accuracy to **85%**.  
 📌 **[MonsterRewards](https://github.com/pc9350/Banking_App)** – **iOS app built with Swift & SwiftUI**, designed for **enhancing user engagement via gamified rewards**.
-
 📌 **[PhonicsJoy](https://github.com/pc9350/phonics-story-generator)** – AI-generated **phonics stories** for kids using **React & Supabase**.  
 
 ---
