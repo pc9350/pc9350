@@ -83,7 +83,7 @@
 
 ### 📊 GitHub Stats  
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pc9350&show_icons=true&theme=radical" />
+  <img src="https://github-readme-stats.vercel.app/api?username=pc9350&show_icons=true&theme=radical&hide=contribs" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pc9350&layout=compact&theme=radical" />
 </p>
 
