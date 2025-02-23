@@ -83,9 +83,9 @@
 
 ### 📊 GitHub Stats  
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=pc9350&theme=radical" />
   <img src="https://github-readme-stats.vercel.app/api?username=pc9350&show_icons=true&theme=radical" />
-</p>  
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pc9350&layout=compact&theme=radical" />
+</p>
 
 ---
 
