@@ -10,7 +10,7 @@
 💻 **Experienced in:** Next.js, React, Node.js, Python, AWS, OpenAI, RAG Pipelines, Pinecone  
 🛠 **Software Engineering Resident at** Headstarter AI | **Previously at:** TeammateME, Capital One, AiRo Digital Labs  
 📈 **Building AI-driven products**, including LLM evaluation platforms, customer support automation, and fintech solutions.  
-🔍 Developing an **AI-powered Chrome Extension** for productivity automation.  
+🔍 **Developing an AI-powered Chrome Extension** for productivity automation.  
 
 ---
 
