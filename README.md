@@ -78,8 +78,8 @@
 📌 **[Customer Churn Prediction](https://github.com/pc9350/Customer-Churn-Prediction)** – **ML-powered churn analysis**, increasing prediction accuracy to **85%**.  
 📌 **Captionator 🔒** – AI caption & hashtag generator already powering **100 + creators**.  
 &nbsp;&nbsp;&nbsp;&nbsp;• **Website:** <[Link](https://captionator-caption-generator.vercel.app/)>  
-&nbsp;&nbsp;&nbsp;&nbsp;• **App Store:** <[https://captionator-caption-generator.vercel.app/](https://apps.apple.com/us/app/captionator-caption-generator/id6743040694)>  
-&nbsp;&nbsp;&nbsp;&nbsp;• **Play Store:** <[https://captionator-caption-generator.vercel.app/](https://play.google.com/store/apps/details?id=com.captionator.app&hl=en_US)>    
+&nbsp;&nbsp;&nbsp;&nbsp;• **App Store:** <[App Store Link](https://apps.apple.com/us/app/captionator-caption-generator/id6743040694)>  
+&nbsp;&nbsp;&nbsp;&nbsp;• **Play Store:** <[Play Store Link](https://play.google.com/store/apps/details?id=com.captionator.app&hl=en_US)>    
 &nbsp;&nbsp;&nbsp;&nbsp;• *DM me for a tech deep‑dive.*  
 📌 **[MonsterRewards](https://github.com/pc9350/Banking_App)** – **iOS app built with Swift & SwiftUI**, designed for **enhancing user engagement via gamified rewards**.  
 📌 **[PhonicsJoy](https://github.com/pc9350/phonics-story-generator)** – AI-generated **phonics stories** for kids using **React & Supabase**.  
