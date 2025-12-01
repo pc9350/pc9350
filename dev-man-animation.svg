@@ -1,181 +1,121 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
   <defs>
-    <!-- Glow filter for neon effect -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#00ff88;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.3"/>
+    </linearGradient>
   </defs>
   
-  <style>
-    .bg { fill: #0d1117; }
-    .maze-line { stroke: #00ff88; stroke-width: 2; fill: none; opacity: 0.4; }
-    
-    /* Characters */
-    .devman { fill: #ffff00; }
-    .bug { fill: #ff4757; }
-    .merge { fill: #ff9f43; }
-    .debt { fill: #a55eea; }
-    .eye-white { fill: #ffffff; }
-    .eye-pupil { fill: #0d1117; }
-    
-    /* Dots */
-    .dot { fill: #00ff88; }
-    .power-dot { fill: #00d4ff; }
-    
-    /* Text */
-    .title {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      font-size: 28px;
-      font-weight: bold;
-      fill: #ffff00;
-    }
-    .subtitle {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      font-size: 11px;
-      fill: #8b949e;
-    }
-    
-    /* Main chase animation - loops seamlessly */
-    @keyframes chase {
-      0% { transform: translateX(-100px); }
-      100% { transform: translateX(900px); }
-    }
-    
-    /* Chomp animation for pac-man mouth */
-    @keyframes chomp {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(15deg); }
-    }
-    @keyframes chomp-lower {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-15deg); }
-    }
-    
-    /* Float animation for enemies */
-    @keyframes wobble {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-2px); }
-    }
-    
-    /* Dot pulse */
-    @keyframes pulse {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-    
-    /* Glow pulse for maze */
-    @keyframes maze-glow {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
-    }
-    
-    .chase-group {
-      animation: chase 6s linear infinite;
-    }
-    
-    .devman-upper {
-      transform-origin: 15px 100px;
-      animation: chomp 0.15s ease-in-out infinite;
-    }
-    .devman-lower {
-      transform-origin: 15px 100px;
-      animation: chomp-lower 0.15s ease-in-out infinite;
-    }
-    
-    .enemy-wobble {
-      animation: wobble 0.3s ease-in-out infinite;
-    }
-    
-    .power-pulse {
-      animation: pulse 0.8s ease-in-out infinite;
-    }
-    
-    .maze-animated {
-      animation: maze-glow 2s ease-in-out infinite;
-    }
-  </style>
-  
   <!-- Background -->
-  <rect class="bg" width="800" height="200"/>
+  <rect fill="#0d1117" width="800" height="200"/>
   
   <!-- Maze border -->
-  <g class="maze-line maze-animated">
-    <rect x="20" y="45" width="760" height="110" rx="5"/>
-    <line x1="20" y1="100" x2="60" y2="100"/>
-    <line x1="740" y1="100" x2="780" y2="100"/>
+  <rect x="20" y="50" width="760" height="100" rx="5" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Tunnel openings -->
+  <rect x="15" y="90" width="15" height="20" fill="#0d1117"/>
+  <rect x="770" y="90" width="15" height="20" fill="#0d1117"/>
+  
+  <!-- Static dots -->
+  <circle fill="#00ff88" cx="120" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="190" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="260" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="330" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="470" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="540" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="610" cy="100" r="4"/>
+  <circle fill="#00ff88" cx="680" cy="100" r="4"/>
+  
+  <!-- Power pellets with pulse animation -->
+  <circle fill="#00d4ff" cx="60" cy="70" r="6">
+    <animate attributeName="r" values="6;8;6" dur="0.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle fill="#00d4ff" cx="740" cy="70" r="6">
+    <animate attributeName="r" values="6;8;6" dur="0.8s" repeatCount="indefinite" begin="0.2s"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="0.8s" repeatCount="indefinite" begin="0.2s"/>
+  </circle>
+  <circle fill="#00d4ff" cx="60" cy="130" r="6">
+    <animate attributeName="r" values="6;8;6" dur="0.8s" repeatCount="indefinite" begin="0.4s"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="0.8s" repeatCount="indefinite" begin="0.4s"/>
+  </circle>
+  <circle fill="#00d4ff" cx="740" cy="130" r="6">
+    <animate attributeName="r" values="6;8;6" dur="0.8s" repeatCount="indefinite" begin="0.6s"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="0.8s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  
+  <!-- DEV-MAN (Pac-Man) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      values="-50,100; 850,100; -50,100" dur="8s" repeatCount="indefinite"/>
+    
+    <!-- Pac-Man body -->
+    <circle fill="#ffff00" cx="0" cy="0" r="15"/>
+    
+    <!-- Animated mouth (wedge that appears/disappears) -->
+    <path fill="#0d1117" d="M 0,0 L 18,-10 L 18,10 Z">
+      <animate attributeName="d" 
+        values="M 0,0 L 18,-10 L 18,10 Z; M 0,0 L 18,-2 L 18,2 Z; M 0,0 L 18,-10 L 18,10 Z" 
+        dur="0.2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Eye -->
+    <circle fill="#0d1117" cx="-2" cy="-7" r="3"/>
   </g>
   
-  <!-- Static dots (decorative) -->
-  <circle class="dot" cx="150" cy="100" r="4"/>
-  <circle class="dot" cx="220" cy="100" r="4"/>
-  <circle class="dot" cx="290" cy="100" r="4"/>
-  <circle class="dot" cx="360" cy="100" r="4"/>
-  <circle class="dot" cx="430" cy="100" r="4"/>
-  <circle class="dot" cx="500" cy="100" r="4"/>
-  <circle class="dot" cx="570" cy="100" r="4"/>
-  <circle class="dot" cx="640" cy="100" r="4"/>
+  <!-- Bug enemy (red) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      values="-100,100; 800,100; -100,100" dur="8s" repeatCount="indefinite"/>
+    
+    <ellipse fill="#ff4757" cx="0" cy="0" rx="12" ry="11">
+      <animate attributeName="ry" values="11;12;11" dur="0.3s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle fill="#ffffff" cx="-4" cy="-2" r="4"/>
+    <circle fill="#ffffff" cx="4" cy="-2" r="4"/>
+    <circle fill="#0d1117" cx="-5" cy="-2" r="2"/>
+    <circle fill="#0d1117" cx="3" cy="-2" r="2"/>
+    <!-- Antenna -->
+    <line x1="-6" y1="-11" x2="-8" y2="-16" stroke="#ff4757" stroke-width="2"/>
+    <line x1="6" y1="-11" x2="8" y2="-16" stroke="#ff4757" stroke-width="2"/>
+    <circle fill="#ff4757" cx="-8" cy="-16" r="2"/>
+    <circle fill="#ff4757" cx="8" cy="-16" r="2"/>
+  </g>
   
-  <!-- Power pellets in corners -->
-  <circle class="power-dot power-pulse" cx="60" cy="70" r="6"/>
-  <circle class="power-dot power-pulse" cx="740" cy="70" r="6" style="animation-delay: 0.4s;"/>
-  <circle class="power-dot power-pulse" cx="60" cy="130" r="6" style="animation-delay: 0.2s;"/>
-  <circle class="power-dot power-pulse" cx="740" cy="130" r="6" style="animation-delay: 0.6s;"/>
+  <!-- Merge Conflict enemy (orange) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      values="-150,100; 750,100; -150,100" dur="8s" repeatCount="indefinite"/>
+    
+    <polygon fill="#ff9f43" points="0,-13 13,9 -13,9">
+      <animate attributeName="points" values="0,-13 13,9 -13,9; 0,-15 13,9 -13,9; 0,-13 13,9 -13,9" dur="0.4s" repeatCount="indefinite"/>
+    </polygon>
+    <circle fill="#ffffff" cx="-4" cy="0" r="3"/>
+    <circle fill="#ffffff" cx="4" cy="0" r="3"/>
+    <circle fill="#0d1117" cx="-5" cy="0" r="1.5"/>
+    <circle fill="#0d1117" cx="3" cy="0" r="1.5"/>
+  </g>
   
-  <!-- Chase group - all characters move together -->
-  <g class="chase-group">
-    <!-- DEV-MAN (Pac-Man) -->
-    <g transform="translate(0, 100)">
-      <!-- Upper jaw -->
-      <path class="devman devman-upper" d="M 0,0 L 15,-2 A 15 15 0 0 1 15,0 Z"/>
-      <!-- Lower jaw -->
-      <path class="devman devman-lower" d="M 0,0 L 15,2 A 15 15 0 0 0 15,0 Z"/>
-      <!-- Body back -->
-      <path class="devman" d="M 0,0 A 15 15 0 1 1 0,-0.01 Z"/>
-      <!-- Eye -->
-      <circle fill="#0d1117" cx="-2" cy="-6" r="3"/>
-    </g>
+  <!-- Tech Debt enemy (purple) -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      values="-200,100; 700,100; -200,100" dur="8s" repeatCount="indefinite"/>
     
-    <!-- Bug enemy (red) - chasing -->
-    <g transform="translate(-50, 100)" class="enemy-wobble">
-      <ellipse class="bug" cx="0" cy="0" rx="12" ry="11"/>
-      <circle class="eye-white" cx="-4" cy="-2" r="4"/>
-      <circle class="eye-white" cx="4" cy="-2" r="4"/>
-      <circle class="eye-pupil" cx="-5" cy="-2" r="2"/>
-      <circle class="eye-pupil" cx="3" cy="-2" r="2"/>
-      <!-- Legs -->
-      <path d="M -8,8 L -10,14 M -4,10 L -5,15 M 4,10 L 5,15 M 8,8 L 10,14" stroke="#ff4757" stroke-width="2" fill="none"/>
-    </g>
-    
-    <!-- Merge Conflict enemy (orange) -->
-    <g transform="translate(-95, 100)" class="enemy-wobble" style="animation-delay: 0.1s;">
-      <polygon class="merge" points="0,-13 13,9 -13,9"/>
-      <circle class="eye-white" cx="-4" cy="0" r="3"/>
-      <circle class="eye-white" cx="4" cy="0" r="3"/>
-      <circle class="eye-pupil" cx="-5" cy="0" r="1.5"/>
-      <circle class="eye-pupil" cx="3" cy="0" r="1.5"/>
-      <!-- Exclamation mark -->
-      <text x="-3" y="-4" font-size="8" fill="#0d1117" font-weight="bold">!</text>
-    </g>
-    
-    <!-- Tech Debt enemy (purple) -->
-    <g transform="translate(-140, 100)" class="enemy-wobble" style="animation-delay: 0.2s;">
-      <rect class="debt" x="-11" y="-11" width="22" height="22" rx="4"/>
-      <circle class="eye-white" cx="-4" cy="-2" r="3"/>
-      <circle class="eye-white" cx="4" cy="-2" r="3"/>
-      <circle class="eye-pupil" cx="-5" cy="-2" r="1.5"/>
-      <circle class="eye-pupil" cx="3" cy="-2" r="1.5"/>
-      <!-- Skull mouth -->
-      <rect fill="#0d1117" x="-6" y="4" width="12" height="4" rx="1"/>
-    </g>
+    <rect fill="#a55eea" x="-11" y="-11" width="22" height="22" rx="4">
+      <animate attributeName="rx" values="4;6;4" dur="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <circle fill="#ffffff" cx="-4" cy="-2" r="3"/>
+    <circle fill="#ffffff" cx="4" cy="-2" r="3"/>
+    <circle fill="#0d1117" cx="-5" cy="-2" r="1.5"/>
+    <circle fill="#0d1117" cx="3" cy="-2" r="1.5"/>
+    <!-- Skull mouth -->
+    <rect fill="#0d1117" x="-6" y="4" width="12" height="4" rx="1"/>
   </g>
   
   <!-- Title -->
-  <text class="title" x="400" y="30" text-anchor="middle" filter="url(#glow)">🎮 DEV-MAN</text>
+  <text x="400" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffff00">🎮 DEV-MAN</text>
   
   <!-- Subtitle -->
-  <text class="subtitle" x="400" y="180" text-anchor="middle">Dodge bugs • Escape merge conflicts • Outrun tech debt • Click to play!</text>
+  <text x="400" y="175" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#8b949e">Dodge bugs • Escape merge conflicts • Outrun tech debt • Click to play!</text>
 </svg>
