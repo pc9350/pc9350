@@ -180,9 +180,6 @@
   <!-- Power Pellet -->
   <circle class="power-dot power-dot-anim" cx="600" cy="100" r="8"/>
   
-  <!-- Score Popup -->
-  <text class="score-text score-popup" x="200" y="85">+10</text>
-  
   <!-- DEV-MAN Character -->
   <g class="devman-group" transform="translate(80, 100)">
     <g class="devman-body">
@@ -243,9 +240,5 @@
   <!-- Title -->
   <text class="title" x="400" y="28" text-anchor="middle">DEV-MAN</text>
   <text class="subtitle" x="400" y="185" text-anchor="middle">Dodge bugs • Escape merge conflicts • Outrun tech debt • Click to play!</text>
-  
-  <!-- Score Display - repositioned to corners -->
-  <text class="score-text" x="70" y="175" text-anchor="start">SCORE: 1337</text>
-  <text class="score-text" x="730" y="175" text-anchor="end">HIGH: 9999</text>
 </svg>
 
