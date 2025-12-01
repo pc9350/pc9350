@@ -2,7 +2,7 @@
 
 Software Engineer who gets excited about AI, full-stack development, and building things that actually help people.
 
-Currently at **Headstarter AI** | Previously shipped code at **Capital One**, **TeammateME**, and **AiRo Digital Labs**
+Currently **freelancing** and open to new opportunities | Previously at **Headstarter AI**, **Capital One**, **TeammateME**, and **AiRo Digital Labs**
 
 <p>
   <a href="https://pranavchhabra.com/">🌐 pranavchhabra.com</a> · 

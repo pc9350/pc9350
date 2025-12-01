@@ -977,18 +977,20 @@
         function updatePlayer(deltaTime) {
             const speed = gameState.speedBoostActive ? CONFIG.PLAYER_SPEED * 1.5 : CONFIG.PLAYER_SPEED;
 
-            // Try to change direction if queued
+            // Check for immediate reversal (180° turn) - this can happen anytime
             if (player.nextDirection.x !== 0 || player.nextDirection.y !== 0) {
-                const nextX = player.x + player.nextDirection.x;
-                const nextY = player.y + player.nextDirection.y;
+                const isReversal = (player.nextDirection.x === -player.direction.x && player.nextDirection.y === -player.direction.y);
                 
-                // Handle wrapping
-                let checkX = nextX;
-                if (checkX < 0) checkX = CONFIG.GRID_WIDTH - 1;
-                if (checkX >= CONFIG.GRID_WIDTH) checkX = 0;
-
-                if (isWalkable(checkX, nextY)) {
+                if (isReversal && (player.direction.x !== 0 || player.direction.y !== 0)) {
+                    // Immediate reversal - swap current position and target
                     player.direction = { ...player.nextDirection };
+                    const tempX = player.x;
+                    const tempY = player.y;
+                    player.x = player.targetX;
+                    player.y = player.targetY;
+                    player.targetX = tempX;
+                    player.targetY = tempY;
+                    player.nextDirection = { x: 0, y: 0 };
                 }
             }
 
@@ -1012,6 +1014,22 @@
 
                 // Collect items on current tile
                 collectItem(player.x, player.y);
+
+                // Try to change direction if queued (at intersections)
+                if (player.nextDirection.x !== 0 || player.nextDirection.y !== 0) {
+                    const nextX = player.x + player.nextDirection.x;
+                    const nextY = player.y + player.nextDirection.y;
+                    
+                    // Handle wrapping
+                    let checkX = nextX;
+                    if (checkX < 0) checkX = CONFIG.GRID_WIDTH - 1;
+                    if (checkX >= CONFIG.GRID_WIDTH) checkX = 0;
+
+                    if (isWalkable(checkX, nextY)) {
+                        player.direction = { ...player.nextDirection };
+                        player.nextDirection = { x: 0, y: 0 };
+                    }
+                }
 
                 // Set next target if direction is set
                 if (player.direction.x !== 0 || player.direction.y !== 0) {
