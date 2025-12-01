@@ -23,9 +23,10 @@
     /* Text */
     .title { 
       font-family: 'Courier New', monospace; 
-      font-size: 24px; 
+      font-size: 32px; 
       font-weight: bold;
-      fill: #00ff88;
+      fill: #ffff00;
+      filter: drop-shadow(0 0 8px #ffff00);
     }
     .subtitle {
       font-family: 'Courier New', monospace;
@@ -240,11 +241,11 @@
   </g>
   
   <!-- Title -->
-  <text class="title" x="400" y="30" text-anchor="middle">🎮 DEV-MAN: A Developer's Nightmare</text>
-  <text class="subtitle" x="400" y="185" text-anchor="middle">Dodge bugs • Escape merge conflicts • Outrun tech debt • Power up with coffee!</text>
+  <text class="title" x="400" y="28" text-anchor="middle">DEV-MAN</text>
+  <text class="subtitle" x="400" y="185" text-anchor="middle">Dodge bugs • Escape merge conflicts • Outrun tech debt • Click to play!</text>
   
-  <!-- Score Display -->
-  <text class="score-text" x="70" y="30">SCORE: 1337</text>
-  <text class="score-text" x="650" y="30">HIGH: 9999</text>
+  <!-- Score Display - repositioned to corners -->
+  <text class="score-text" x="70" y="175" text-anchor="start">SCORE: 1337</text>
+  <text class="score-text" x="730" y="175" text-anchor="end">HIGH: 9999</text>
 </svg>
 
